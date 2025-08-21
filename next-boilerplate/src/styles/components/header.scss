@@ -79,6 +79,17 @@
     object-fit: contain;
   }
 }
+
+// Container direito para toggle e menu
+.header-right-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
 .full-width-row.mobile-header {
   background-color: transparent !important;
   .logo-link svg {
@@ -86,39 +97,70 @@
   }
 }
 
-.toggle-dark-mode {
-  z-index: 99;
-  position: absolute;
-  right: 50px;
-  top: 60px;
-  transform: rotate(90deg);
+// Toggle de tema no header
+.theme-toggle-container {
   display: flex;
-  flex-direction: row;
-  background-color: #636363;
-  border-radius: 10px;
-  height: 30px;
-  width: 75px;
-  padding: 4px 10px;
-  button {
-    padding: 3px;
-    margin: 0 4px;
-    background-color: #2a2a2a;
-    border-radius: 15px;
-    align-self: center;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 99;
+
+  .theme-toggle-btn {
+    background-color: transparent;
+    border: 2px solid #636363;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
-    height: 30px;
-    width: 40px;
-    border: 2px solid #2a2a2a;
+    justify-content: center;
     cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+
+    &:hover {
+      border-color: #888;
+      background-color: rgba(136, 136, 136, 0.2);
+      transform: scale(1.1);
+    }
 
     &.active {
-      border-color: #fff;
+      border-color: #636363;
+      background-color: #636363;
     }
+
     img {
       margin: 0;
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover img {
+      opacity: 1;
+    }
+
+    &.active img {
+      opacity: 1;
     }
   }
+}
+
+// Ajuste do menu para não sobrepor
+.main-header-visible,
+.main-header-not-visible {
+  position: relative;
+  z-index: 98;
+}
+
+// Ajuste específico do botão door para não conflitar
+.door {
+  position: relative !important;
+  right: auto !important;
+  top: auto !important;
+}
+
+// Toggle antigo removido
+.toggle-dark-mode {
+  display: none;
 }
 
 .header-logo.full-width-row {
