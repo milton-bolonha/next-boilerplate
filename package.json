@@ -1,6 +1,6 @@
 {
   "name": "next-boilerplate-workspace",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "workspaces": [
     "next-boilerplate"
   ],
@@ -41,3 +41,4 @@
     "url": "https://github.com/miltonbolonha/next-boilerplate/issues"
   }
 }
+
